@@ -1,5 +1,10 @@
 # SAX Demo
 
+This Dash application allows experimenting with the parameters of the SAX transformation. For more information on the transformation, please refer to Sec. 2.3 of _iSAX: Indexing and Mining Terabyte Sized Time
+Series, Jin Shieh & Eamonn Keogh, SIGKDD, 2008_
+
+By default, a timeseries of length 128 is used. For comparison, the code also contains a shorter time series which is very similar to the above-mentioned paper (see line sax_dash.py:130).
+
 ## Instructions
 After cloning the repository, run the following commands (assuming you are using Anaconda)
 
