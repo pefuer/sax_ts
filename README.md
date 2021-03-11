@@ -5,8 +5,11 @@ Series, Jin Shieh & Eamonn Keogh, SIGKDD, 2008_
 
 By default, a timeseries of length 128 is used. For comparison, the code also contains a shorter time series which is very similar to the above-mentioned paper (see line sax_dash.py:130).
 
-## Instructions
-After cloning the repository, run the following commands (assuming you are using Anaconda)
+## Instructions Python 3.9.2
+Use `requirements.txt` to install dependencies. Tested with Python 3.9.2 / Windows.
+
+## Instructions Anaconda
+After cloning the repository, run the following commands
 
 1. `conda create -n saxts dash numpy scipy`
 2. `conda activate saxts`
