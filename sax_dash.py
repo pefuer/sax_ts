@@ -9,8 +9,20 @@ import plotly.graph_objs as go
 from numpy.random import default_rng
 rng = default_rng()
 
+# ************************************************
+# Helper methods for the SAX transformation
 
 def get_breakpoints(n):
+    """ Calculates breakpoints
+    Uses scipy's inverse cummulative gaussian distribution to find the boundaries.
+    
+    Args:
+        n (int) cardinality
+       
+    Returns:
+        List of sax words
+    """
+
     b = norm.ppf(np.linspace(0,1, n+1))
     
     # do not slice inf/-inf as they are used later in range comparisons
@@ -117,14 +129,15 @@ def get_hist(sax_words, cardinality):
 # This short series approximates the example from the paper
 T = np.array([-.6, -.5, -.7, -1, -.8, -1.5, -.75, -.1, -.15, .2, .3, .2, 1.3, 1.7, 1.5, 1.4])
 
-# Synthetic, slightly longer series
+# Synthetic longer series
 x_len = 128
 x = np.linspace(0, 16, x_len)
 x = np.sin(x) + np.sin(0.25*x) + np.sin(-.5*x) + 0.1*rng.standard_normal(x_len)
 x = (x - np.mean(x)) / np.std(x)
 T = x
 
-
+# ************************************************
+# Below Dash app code
 app = dash.Dash(__name__)
 server = app.server
 
